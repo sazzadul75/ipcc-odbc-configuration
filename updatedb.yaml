@@ -2,9 +2,9 @@
 - name: Update odbc.ini file with latest password to connect AWS MySQL RDS
   hosts: asteriskec2
   tasks:
-    - name: Update odbc.ini file with latest password to connect AWS MySQL RDS  
-      linefile:
-        path: "{{ fpath }}/odbc.ini"
-        regexp: "^password="
-        line: "password={{ password }}"
+  - name: Update odbc.ini file with latest password to connect AWS MySQL RDS  
+    linefile:
+      path: "{{ fpath }}/odbc.ini"
+      regexp: "^password="
+      line: "password={{ password }}"
 ...
