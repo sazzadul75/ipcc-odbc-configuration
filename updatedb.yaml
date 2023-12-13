@@ -1,6 +1,9 @@
 ---
 - name: Update odbc.ini file with latest password to connect AWS MySQL RDS
   hosts: hostmachine
+  vars: 
+    fpath: "{{ lookup('env','fpath') }}"
+    password: "{{ lookup('env','password') }}"
   tasks:
   - name: Update odbc.ini file with latest password to connect AWS MySQL RDS
     lineinfile:
