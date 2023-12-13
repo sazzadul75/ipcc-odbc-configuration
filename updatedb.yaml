@@ -25,5 +25,6 @@
       dest: "{{ target_path }}/odbc.ini"
         #remote_src: yes
       mode: '0644'
+    become: yes
     become_user: ansible_user
 ...
