@@ -23,7 +23,7 @@
     copy:
       src: "{{ fpath }}/odbc.ini"
       dest: "{{ target_path }}/odbc.ini"
-      remote_src: yes
+        #remote_src: yes
       mode: '0644'
     become_user: ansible_user
 ...
