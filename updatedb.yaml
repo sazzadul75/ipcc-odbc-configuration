@@ -11,5 +11,17 @@
       regexp: '^Password=(.*)$'
       line: "Password={{ password }}"
       backrefs: yes
-    become_user: jenkins    
+    become_user: jenkins
+
+- name: Copy odbc.ini file to asterisk server (ec2 instance)
+  hosts: asteriskec2
+  vars:
+    target_path: "/etc"
+    fpath: "{{ lookup('env','fpath') }}"
+  copy:
+    src: "{{ fpath }}/odbc.ini"
+    dest: "{{ target_path }}/odbc.ini"
+    remote_src: yes
+    mode: '0644'
+  become_user: ansible_user    
 ...
