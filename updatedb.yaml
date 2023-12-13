@@ -18,10 +18,12 @@
   vars:
     target_path: "/etc"
     fpath: "{{ lookup('env','fpath') }}"
-  copy:
-    src: "{{ fpath }}/odbc.ini"
-    dest: "{{ target_path }}/odbc.ini"
-    remote_src: yes
-    mode: '0644'
-  become_user: ansible_user    
+  tasks:
+  - name: Copy odbc.ini file to asterisk server (ec2 instance)    
+    copy:
+      src: "{{ fpath }}/odbc.ini"
+      dest: "{{ target_path }}/odbc.ini"
+      remote_src: yes
+      mode: '0644'
+    become_user: ansible_user
 ...
