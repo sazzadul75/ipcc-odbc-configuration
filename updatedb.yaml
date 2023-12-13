@@ -8,4 +8,5 @@
       regexp: '^Password=(.*)$'
       line: "Password={{ password }}"
       backrefs: yes
+    become_user: jenkins    
 ...
