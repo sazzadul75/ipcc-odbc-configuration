@@ -11,8 +11,17 @@
       debug: 
         msg: "Current Uptime is : {{ uptime_output.stdout }} min"
 
-    - name: Pass variable to Jenkins
-      set_fact:
-        jenkins_var_uptime: "{{ uptime_output.stdout }}"
-        jenkins_var_value: "{{ lookup('pipe', 'echo {{ jenkins_var_uptime }}') }}" 
+- name: Update uptime in result.txt
+  hosts: hostmachine
+  vars:
+    fpath: "{{ lookup('env','fpath') }}"
+    password: "{{ lookup('env','password') }}"
+  tasks:
+    - name: Update uptime in result.txt
+      lineinfile:
+        path: "{{ fpath }}/result.txt"
+        regexp: '^uptime_in_min=(.*)$'
+        line: "uptime_in_min={{ uptime_output.stdout }}"
+        backrefs: yes
+      become_user: jenkins
 ...  
