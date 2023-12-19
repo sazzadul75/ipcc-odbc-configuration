@@ -11,6 +11,11 @@
       debug: 
         msg: "Current Uptime is : {{ uptime_output.stdout }} min"
 
+    - name: Register local variable
+      set_fact:
+        uptime: "{{ uptime_output.stdout }}"
+            
+
 - name: Update uptime in result.txt
   hosts: hostmachine
   vars:
@@ -21,7 +26,7 @@
       lineinfile:
         path: "{{ fpath }}/result.txt"
         regexp: '^uptime_in_min=(.*)$'
-        line: "uptime_in_min={{ uptime_output.stdout }}"
+        line: "uptime_in_min={{ hostvars['asteriskec2']['uptime'] }}"
         backrefs: yes
       become_user: jenkins
 ...  
