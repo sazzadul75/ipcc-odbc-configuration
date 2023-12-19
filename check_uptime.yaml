@@ -10,4 +10,9 @@
     - name: Display uptime in minutes
       debug: 
         msg: "Current Uptime is : {{ uptime_output.stdout }} min"
-...
+
+    - name: Pass variable to Jenkins
+      set_fact:
+        jenkins_var_uptime: "{{ uptime_output.stdout }}"
+        jenkins_var_value: "{{ lookup('pipe', 'echo {{ jenkins_var_uptime }}') }}" 
+...  
