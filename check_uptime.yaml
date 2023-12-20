@@ -20,7 +20,6 @@
   hosts: hostmachine
   vars:
     fpath: "{{ lookup('env','fpath') }}"
-    password: "{{ lookup('env','password') }}"
   tasks:
     - name: Update uptime in result.txt
       lineinfile:
