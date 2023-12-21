@@ -4,16 +4,7 @@
   gather_facts: no
   tasks:
     - name: Reboot the Server
-      #shell: aws ec2 reboot-instances --instance-ids i-0c23fa871d3788d77 --region ap-south-1
-      #shell: /sbin/shutdown -r now
-      #shell: "sleep 5 && reboot"
-      #async: 1
-      #poll: 0
-        #tags: reboot
-        #become: yes
       reboot:
-        #become: yes  
-        #become_user: root
 
     - name: Wait for the reboot to complete
       wait_for_connection:
@@ -22,11 +13,11 @@
         delay: 5
         timeout: 180
 
-    - name: Get uptime in minutes
-      shell: echo $(awk '{print $1}' /proc/uptime) / 60 | bc
-      register: uptime_output
+    - name: Check Date & Time
+      shell: date
+      register: date_time
 
-    - name: Display uptime in minutes
+    - name: Display Date & Time
       debug:
-        msg: "Current Uptime is : {{ uptime_output.stdout }} min"
+        msg: "Current Date & Time is : {{ date_time.stdout }}"
 ...
