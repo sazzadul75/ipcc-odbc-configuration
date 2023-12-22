@@ -7,7 +7,7 @@
     password: "{{ lookup('env','password') }}"
   tasks:
     - name : Check connectivity with database
-      shell: echo "quit" | isql -v "{{ dsn }}" "{{ username }}" "{{ password }}"
+      shell: echo "quit" | isql -v "{{ dsn }}" "{{ username }}" '{{ password }}'
       register: output
 
     - name: Display Output
