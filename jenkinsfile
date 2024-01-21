@@ -8,8 +8,13 @@ pipeline {
   
   environment {
       username = "admin"
+      
+      # AWS Secrets Manager Secret Name -- Subject to Change 
       mysecret = "rds!db-0151ba78-0d24-475c-9878-d66e6de9880b"
+
+      # AWS Region Code -- Subject to Change
       aws_region = 'ap-south-1'
+      
       fpath="${WORKSPACE}"
       dsn = "asterisk-ipcc-db"
   }
