@@ -30,3 +30,5 @@ filename --> odbc.ini : contains correct RDS Instance End point [change as per n
 
 Only update/modify this GitHub Repo once considering EC2 Servers IPs, RDS Endpoint, AWS Region & Secret Name in AWS Secrets Manager 
 remains un-altered. If these values remains unchanged then no need to modify repo code between successive builds in Jenkins Server.
+
+![IPCC -- Architecture Diagram_2](https://github.com/sarbajitD-24/ipcc-odbc-configuration/assets/65843678/8f031c9c-aa09-4116-a9ef-084978cc61bf)
