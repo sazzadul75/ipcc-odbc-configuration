@@ -32,3 +32,27 @@ Only update/modify this GitHub Repo once considering EC2 Servers IPs, RDS Endpoi
 remains un-altered. If these values remains unchanged then no need to modify repo code between successive builds in Jenkins Server.
 
 ![IPCC -- Architecture Diagram_2](https://github.com/sarbajitD-24/ipcc-odbc-configuration/assets/65843678/8f031c9c-aa09-4116-a9ef-084978cc61bf)
+
+Project Requirements
+====================
+
+Requirement 1 : Create jenkins pipeline for RDS password retrieval and update to asterisk config
+
+Description : As part of this Jenkins Job, it should retrieve the RDS MySQL credentials from AWS secret manager and update  
+the username and password in the Asterisk config file. Then restart the asterisk server.
+
+Acceptance Criteria
+~~~~~~~~~~~~~~~~~~~~
+✱ Verify When the Jenkin Job runs, the latest password is updated in asterisk config file.
+✱ Verify when the asterisk server starts up and it connects with the database.
+
+
+Requirement 2 : Enable SNS email notification for rds password rotation
+
+Description : You can monitor AWS Secrets Manager using Amazon CloudWatch. So when the Secret changes an email notification 
+should be sent to the Product Team using SNS.
+
+Acceptance Criteria
+~~~~~~~~~~~~~~~~~~~~
+✱ Verify email is send to the product team on password change
+
