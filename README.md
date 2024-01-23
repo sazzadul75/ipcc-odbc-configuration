@@ -38,8 +38,7 @@ Project Requirements
 
 Requirement 1 : Create jenkins pipeline for RDS password retrieval and update to asterisk config
 
-Description : As part of this Jenkins Job, it should retrieve the RDS MySQL credentials from AWS secret manager and update  
-the username and password in the Asterisk config file. Then restart the asterisk server.
+Description : As part of this Jenkins Job, it should retrieve the RDS MySQL credentials from AWS secret manager and update the username and password in the Asterisk config file. Then restart the asterisk server.
 
 Acceptance Criteria
 ~~~~~~~~~~~~~~~~~~~~
@@ -49,8 +48,7 @@ Acceptance Criteria
 
 Requirement 2 : Enable SNS email notification for rds password rotation
 
-Description : You can monitor AWS Secrets Manager using Amazon CloudWatch. So when the Secret changes an email notification 
-should be sent to the Product Team using SNS.
+Description : You can monitor AWS Secrets Manager using Amazon CloudWatch. So when the Secret changes an email notification should be sent to the Product Team using SNS.
 
 Acceptance Criteria
 ~~~~~~~~~~~~~~~~~~~~
