@@ -25,7 +25,9 @@ Changes/Modifications to look out for
 Please check out below files in this repo as Jenkins build will fail if correct details are not updated :
 
 filename --> hosts : contains correct IP address of Jenkins Server (EC2 Instance) & Asterisk Server (EC2 Instance) [change as per need]
+
 filename --> jenkinsfile : contains correct Secret Name & AWS Region Code [change as per need]
+
 filename --> odbc.ini : contains correct RDS Instance End point [change as per need]
 
 Only update/modify this GitHub Repo once considering EC2 Servers IPs, RDS Endpoint, AWS Region & Secret Name in AWS Secrets Manager 
