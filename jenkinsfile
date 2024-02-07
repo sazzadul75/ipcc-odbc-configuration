@@ -9,10 +9,10 @@ pipeline {
   environment {
       username = "admin"
       
-      # AWS Secrets Manager Secret Name -- Subject to Change 
+      //AWS Secrets Manager Secret Name -- Subject to Change 
       mysecret = "rds!db-d4e3e615-84ae-4787-b007-75e44cc206c6"
 
-      # AWS Region Code -- Subject to Change
+      //AWS Region Code -- Subject to Change
       aws_region = 'ca-central-1'
       
       fpath="${WORKSPACE}"
