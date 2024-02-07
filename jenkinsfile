@@ -13,7 +13,7 @@ pipeline {
       mysecret = "rds!db-d4e3e615-84ae-4787-b007-75e44cc206c6"
 
       # AWS Region Code -- Subject to Change
-      aws_region = 'ca-central-1a'
+      aws_region = 'ca-central-1'
       
       fpath="${WORKSPACE}"
       dsn = "asterisk-ipcc-db"
