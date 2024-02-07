@@ -9,10 +9,10 @@ pipeline {
   environment {
       username = "admin"
       
-      //AWS Secrets Manager Secret Name -- Subject to Change 
+       
       mysecret = "rds!db-d4e3e615-84ae-4787-b007-75e44cc206c6"
 
-      //AWS Region Code -- Subject to Change
+   
       aws_region = 'ca-central-1'
       
       fpath="${WORKSPACE}"
@@ -43,7 +43,7 @@ pipeline {
                   
                   withCredentials([[
                       $class: 'AmazonWebServicesCredentialsBinding',
-                      credentialsId: 'aws-sm-getsecretvalue',
+                      credentialsId: 'ipcc-user',
                       accessKeyVariable: 'AWS_ACCESS_KEY_ID',
                       secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                           
@@ -117,4 +117,4 @@ pipeline {
       
   }
   
-}  
+}
